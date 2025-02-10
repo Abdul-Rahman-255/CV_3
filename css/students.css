@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #ffcb10;
+    --main-alt-color: #f3c41b;
+    --left-side-bg-color: #181d25;
+    --body-bg: #1c2129;
+    --shadow_light: #eee;
+    --white_text: #fff;
+    --secondary_white_text: #ddd;
+    --border-color: #ffffff33;
+    --light-dark: #282e3a;
+
+    --main-transition-duration: .2s ease-out;
+}
+
+.dark-mood {
+    --main-color: #ce0000;
+    --main-alt-color: #f00;
+    --left-side-bg-color: #ddd;
+    --body-bg: #e7e9ec;
+    --shadow_light: #ccc;
+    --white_text: #000;
+    --link-color: #fff;
+    --secondary_white_text: #222;
+    --border-color: #ffffff33;
+    --light-dark: #192a461d;
+    --icon-color: #192a46;
+}
+
+body {
+    background-color: var(--body-bg);
+    font-family: "Poppins", "Cairo", Arial, Tahoma, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.top_section {
+    position: relative;
+    min-height: 100vh;
+    background: url(../assets/images/courses_zone_students.jpg) center center/cover no-repeat fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top_section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, .9), rgba(0, 0, 0, .6));
+    width: 100%;
+    height: 100%;
+}
+
+.top_section .content h2 {
+    position: relative;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    color: #fff;
+    z-index: 3;
+}
+
+.top_section .content p {
+    position: relative;
+    font-size: 1rem;
+    color: #ddd;
+    z-index: 2;
+}
+
+.top_section .content p a {
+    color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+blue {
+    color: var(--main-color);
+}
+
+.video_section .container-sm {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.title {
+    color: var(--white_text);
+    font-size: 1.75rem;
+    margin: 2.5rem 0 1.5rem 0;
+    font-weight: 500;
+    letter-spacing: .5px;
+}
+
+.video video {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 10px;
+}
+
+.video_section .content p {
+    color: var(--secondary_white_text);
+    letter-spacing: .5px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+}
+
+html.lenis {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.toggle_mode_box {
+    position: fixed;
+    top: 25px;
+    right: 30px;
+}
+
+.toggle_mode_box .toggle_mode {
+    color: var(--white_text);
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    margin: 2rem 0;
+    color: var(--white_text);
+}
+
+footer .links {
+    display: grid;
+    place-items: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+}
+
+footer .links .link {
+    margin: 0px 20px;
+    color: var(--white_text);
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--main-transition-duration);
+    -webkit-transition: var(--main-transition-duration);
+    -moz-transition: var(--main-transition-duration);
+    -ms-transition: var(--main-transition-duration);
+    -o-transition: var(--main-transition-duration);
+}
+
+footer .links .link:hover,
+footer .links .link.active {
+    color: var(--main-color);
+    border-color: var(--main-alt-color);
+}
+
+@media screen and (max-width: 996px) {
+    .video_section .container-sm {
+        display: block;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    footer .links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 775px) {
+    .top_section .content h2 {
+        font-size: 2.5rem;
+    }
+
+    .projects .item .left .content p {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .top_section .content h2 {
+        font-size: 2rem;
+    }
+
+    .top_section .content p {
+        font-size: 0.8rem;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+    
+    footer .links {
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    footer .links {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

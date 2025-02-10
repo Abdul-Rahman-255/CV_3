@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CV Mohamed Sharaf | Students</title>
+
+    <!-- ====== Bootstrap Css ====== -->
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css">
+
+    <!-- ====== Font Awesome ====== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ====== Main Css Style ====== -->
+    <link rel="stylesheet" href="./css/students.css">
+</head>
+<body>
+
+    <section class="top_section">
+        <div class="content">
+            <h2>Students</h2>
+            <p class="page_location"><a href="index.html">Home</a> / Students</p>
+        </div>
+    </section>
+    
+    <div class="video_section py-5">
+        <div class="container-sm">
+            <div class="video">
+                <video src="./assets/Videos/video.mp4" controls></video>
+            </div>
+
+            <div class="content">
+                <h2 class="title">Here is the video of my <blue>Students</blue> 😍</h2>
+                <p>
+                    This video includes my students in: Courses Zone, Almentor, Udacity and Ai University some of Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, nam obcaecati accusamus reprehenderit culpa fugiat exercitationem doloremque totam asperiores alias, soluta illo. Reprehenderit, exercitationem unde.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container-sm">
+            <h2 class="section_title" style="--line-width: 30px;">Links</h2>
+            <div class="links">
+
+                <a href="./students.html" class="link active">
+                    <i class="fa-solid fa-users"></i>
+                    Students
+                </a>
+
+                <a href="./projects.html" class="link">
+                    <i class="fa-solid fa-list-check"></i>
+                    Projects
+                </a>
+
+                <a href="" class="link">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                    Courses
+                </a>
+
+                <a href="" class="link">
+                    <i class="fa-solid fa-scroll"></i>
+                    Certificates
+                </a>
+
+            </div>
+        </div>
+    </footer>
+
+    <div class="toggle_mode_box">
+        <i class="toggle_mode fa-solid fa-sun"></i>
+    </div>
+
+    <script src="./assets/bootstrap/js/query-3.7.0.min.js"></script>
+    <script src="./assets/bootstrap/js/popper.min.js"></script>
+    <script src="./assets/bootstrap/js/bootstrap.js"></script>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+    <script>
+
+        const lenis = new Lenis({
+            lerp: 0.1,
+            wheelMultiplier: 1.1,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        $("[data-lenis-start]").on("click", function () {
+            lenis.start();
+        });
+        $("[data-lenis-stop]").on("click", function () {
+            lenis.stop();
+        });
+        $("[data-lenis-toggle]").on("click", function () {
+            $(this).toggleClass("stop-scroll");
+            if ($(this).hasClass("stop-scroll")) {
+                lenis.stop();
+            } else {
+                lenis.start();
+            }
+        });
+    </script>
+
+    <script src="./main.js"></script>
+
+</body>
+</html>
